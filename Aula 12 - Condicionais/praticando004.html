@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manhã tarde ou noite</title>
+    <style>
+        .quadro,
+        .confvot {
+            width: 300px;
+            height: auto;
+            display: block;
+            color: rgb(221, 230, 215);
+            background-color: rgb(5, 46, 48);
+            text-align: center;
+            margin: 100px auto 20px;
+            padding-bottom: 10px;
+        }
+
+        .confvot {
+            margin-top: 20px;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quadro">
+        <h1>Informe que horas são:</h1>
+        <input type="number" name="horas" id="horas">
+        <input type="button" value="Verificar" id="verifica">
+
+    </div>
+    <div class="confvot"></div>
+    <script>
+        var verifica = document.querySelector('#verifica')
+        verifica.addEventListener('click', verificar)
+        function verificar() {
+            var horas = document.querySelector('#horas')
+            var valnum = Number(horas.value)
+            var msg = document.querySelector('.confvot')
+            msg.style.display = 'block'
+            msg.style.font = 'normal 12pt Arial'
+            if (valnum < 6) {
+                msg.innerHTML = `São <strong>${valnum}</strong> horas, boa madrugada!`
+            } else if (valnum < 12) {
+                msg.innerHTML = `São <strong>${valnum}</strong> horas, boa dia!`
+            } else if (valnum < 18) {
+                msg.innerHTML = `São <strong>${valnum}</strong> horas, boa tarde!`
+            } else {
+                msg.innerHTML = `São <strong>${valnum}</strong> horas, boa noite!`
+            }
+        }
+
+    </script>
+</body>
+
+</html>

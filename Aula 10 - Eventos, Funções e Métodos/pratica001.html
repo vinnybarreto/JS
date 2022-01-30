@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando JS</title>
+    <style>
+        .autentica {
+            width: 450px;
+            height: 260px;
+            margin: auto;
+            font: normal 12pt arial;
+            text-align: center;
+            background-color: #5f9ea0;
+            border: solid 2px rgb(7, 77, 24);
+            border-radius: 4px;
+        }
+
+        h2 {
+            line-height: 10px;
+        }
+
+        input {
+            width: 400px;
+        }
+
+        .botão {
+            width: 100px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="autentica">
+        <h1>Faça aqui o seu login</h1>
+        <h2>Nome do usuário</h2>
+        <input type="text" name="login" id="login">
+        <h2>Senha</h2>
+        <input type="text" name="senha" id="senha">
+        <input class="botão" type="button" value="Validar" onclick="valida()">
+        <!--Forma 1 de chamar o método-->
+    </div>
+    <script>
+
+        var dentro = document.querySelector('.autentica');
+        dentro.addEventListener('mouseenter', entrou); //Forma 2 (mais usada de chamar o método)
+        dentro.addEventListener('mouseleave', saiu)
+
+        function entrou() {
+            dentro.style.color = "#fff";
+            dentro.style.backgroundColor = "pink"
+        }
+
+        function saiu() {
+            dentro.style.color = "black";
+            dentro.style.backgroundColor = "#5f9ea0";
+        }
+
+        function valida() {
+            var usuario = document.querySelector('#login').value; //variável usuario assume valor da parametro passado no id
+            var passe = document.querySelector('#senha').value; //variável passe assume valor da parametro passado no id
+            var numusu = usuario.length; //nova variável recebe qtd de caracteres de valor da parametro passado no id
+            var numpass = passe.length; //nova variável recebe qtd de caracteres de valor da parametro passado no id
+            console.log(numusu, numpass)
+            alert(`Seu nome de usuário é ${usuario} e sua senha é ${passe}`);
+            document.write(`Seu login tem ${numusu} caracteres e sua senha tem ${numpass}`);
+        }
+    </script>
+</body>
+
+</html>

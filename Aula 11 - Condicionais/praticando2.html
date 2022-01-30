@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        #resposta,
+        .naciona {
+            width: 300px;
+            height: auto;
+            font: normal 10pt arial;
+            color: darkgreen;
+            background-color: cornflowerblue;
+            border: solid 2px rgb(148, 148, 9);
+            border-radius: 4px;
+            text-align: center;
+            margin: auto;
+        }
+
+        #resposta {
+            display: none;
+        }
+
+        #pais {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="naciona">
+        <h1>Insira o pais em que você nasceu</h1>
+        <input type="text" name="pais" id="pais">
+        <input type="button" value="Validar" id="validar">
+    </div>
+    <div id="resposta"></div>
+    <script>
+        var n = document.querySelector("#validar")
+        n.addEventListener("click", verifica)
+        resp = document.querySelector("#resposta")
+        function verifica() {
+            var nat = document.querySelector("#pais").value
+            var upnat = nat.toUpperCase()
+            console.log(upnat)
+            if (upnat == "BRASIL") {
+                resp.innerHTML = `Você é brasileiro cara`
+                resp.style.display = "block"
+            }
+            else {
+                resp.innerHTML = `Você é estrangeiro mané`
+                resp.style.display = "block"
+            }
+        }
+    </script>
+</body>
+
+</html>

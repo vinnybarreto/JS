@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de opção de voto</title>
+    <style>
+        .vota,
+        .confvot {
+            width: 300px;
+            height: auto;
+            display: block;
+            color: rgb(221, 230, 215);
+            background-color: rgb(5, 46, 48);
+            text-align: center;
+            margin: 100px auto 20px;
+            padding-bottom: 10px;
+        }
+
+        .confvot {
+            margin-top: 20px;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="vota">
+        <h1>Insira a sua idade</h1>
+        <input type="number" name="idade" id="idade">
+        <input type="button" value="Verificar" id="verifica">
+
+    </div>
+    <div class="confvot"></div>
+    <script>
+        var verifica = document.querySelector('#verifica')
+        verifica.addEventListener('click', verificar)
+        function verificar() {
+            var idade = document.querySelector('#idade')
+            var valnum = Number(idade.value)
+            var msg = document.querySelector('.confvot')
+            msg.style.display = 'block'
+            msg.style.font = 'normal 12pt Arial'
+            if (valnum < 16) {
+                msg.innerHTML = `Você tem <strong>${valnum}</strong> anos e não pode votar`
+            } else if (valnum < 18 || valnum > 65) {
+                msg.innerHTML = `Você tem <strong>${valnum}</strong> anos e seu voto é facultativo`
+            } else {
+                msg.innerHTML = `Você tem <strong>${valnum}</strong> anos e seu voto é obrigatório`
+            }
+        }
+
+    </script>
+</body>
+
+</html>

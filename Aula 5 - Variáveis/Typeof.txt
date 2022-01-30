@@ -1,0 +1,1 @@
+O comando typeof indica qual é o tipo de variável definida, "number", "string", "boolean", "object", "function", etc

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATRAN</title>
+</head>
+
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro <input type="numer" name="txtvel" id="txtvel"> km/h
+    <input type="button" value="verificar" id="verificar">
+    <div id="res"></div>
+
+</body>
+<script>
+    verificar = document.querySelector('#verificar')
+    verificar.addEventListener('click', calcular)
+
+    function calcular() {
+        var txtvel = document.querySelector('#txtvel')
+        var numvel = Number(txtvel.value)
+        var res = document.querySelector('#res')
+        res.innerHTML = `<p>A sua velocidade atual é <strong>${numvel}</strong> km/h</p>`
+        res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        if (numvel > 60) {
+            res.innerHTML += `<p>Você está <strong>MULTADO</strong> por acesso de velocidade</p>`
+        }
+        else {
+            res.innerHTML += `<p>Se livrou dessa malandro</p>`
+        }
+
+    }
+
+</script>
+
+</html>

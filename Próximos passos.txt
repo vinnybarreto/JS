@@ -1,0 +1,10 @@
+PROXIMOS PASSOS
+
+1 - ESTUDAR FUNÇÕES
+2 - ESTUDAR OBJETOS
+3 - ESTUDAR MODULARIZAÇÃO (reutilzar códigos)
+4 - ESTUDAR RegEx (expressões regulares)
+5 - ESTUDAR JSON
+6 - ESTUDAR AJAX
+7 - ESTUDAR NODEJS
+7 - FRAMEWORKS (JQuery, NodeJS, Angular) 

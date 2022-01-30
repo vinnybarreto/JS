@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body {
+            background-color: blueviolet;
+            color: #fff;
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <h1>Olá mundo!</h1>
+        <p>Já me livrei da maldição</p>
+    </main>
+    <footer></footer>
+    <script>
+        var n1 = parseInt(window.prompt('Digite um número: '));
+        var n2 = parseFloat(window.prompt('Digite outro número: '));
+        var result = n1 + n2;
+        window.alert('A soma dos valores é ' + result);
+
+        var name1 = window.prompt('Digite seu primeiro nome: ');
+        var name2 = window.prompt('Digite seu último nome: ');
+        window.alert('Seu nome é completo é ' + name1.toString() + ' ' + String(name2));
+
+        window.alert(`A nova forma de concatenar com o template string é assim ${name1} ${name2}`);
+    </script>
+</body>
+
+</html>
